@@ -1,0 +1,5 @@
+#!/bin/sh -l
+#$ -S /bin/sh
+ workon $1;
+ cd ~/Projects/$1;
+ ls;
