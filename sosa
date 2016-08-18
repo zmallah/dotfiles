@@ -1,5 +1,21 @@
 #!/bin/sh -l
 #$ -S /bin/sh
- workon $1;
- cd ~/Projects/$1;
- ls;
+
+Projects='~/Projects'
+
+if [ $1 = 'mk' ]
+then
+    mkdir ~/Projects/$2;
+    mkvirtualenv --python=/usr/local/bin/python3 $2;
+    sosa $2;
+elif [ $1 = 'rm' ]
+then
+    deactivate
+    rmvirtualenv $2;
+    rm -rf ~/Projects/$2;
+    cd ~/Projects;
+else
+    workon $1;
+    cd ~/Projects/$1;
+fi
+
