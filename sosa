@@ -8,6 +8,13 @@ then
     mkdir ~/Projects/$2;
     mkvirtualenv --python=/usr/local/bin/python3 $2;
     sosa $2;
+elif [ $1 = 'clone' ]
+then
+    cd ~/Projects/
+    git clone $2 $3
+    mkdir ~/Projects/$3;
+    mkvirtualenv --python=/usr/local/bin/python3 $3;
+    sosa $3;
 elif [ $1 = 'rm' ]
 then
     deactivate
