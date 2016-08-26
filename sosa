@@ -1,19 +1,25 @@
 #!/bin/sh -l
 #$ -S /bin/sh
 
-Projects='~/Projects'
+if [ -z "$1" ]
+then
+	echo "No parameters given"
+	return 1
+fi
 
 if [ $1 = 'mk' ]
 then
     mkdir ~/Projects/$2;
-    mkvirtualenv --python=/usr/local/bin/python3 $2;
+    cd ~/Projects/$2;
+    git init;
+    mkvirtualenv --python=$(which python3) $2;
     sosa $2;
 elif [ $1 = 'clone' ]
 then
     cd ~/Projects/
     git clone $2 $3
     mkdir ~/Projects/$3;
-    mkvirtualenv --python=/usr/local/bin/python3 $3;
+    mkvirtualenv --python=$(which python3) $3;
     sosa $3;
 elif [ $1 = 'rm' ]
 then
@@ -25,4 +31,3 @@ else
     workon $1;
     cd ~/Projects/$1;
 fi
-

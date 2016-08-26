@@ -1,0 +1,21 @@
+#!/bin/sh -l
+#$ -S /bin/sh
+echo "Installing homebrew"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "Tapping cask"
+brew tap caskroom/cask
+
+echo "Installing zsh and oh-my-zsh"
+brew install zsh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+echo "Installing Google Chrome"
+brew cask install google-chrome
+
+
+echo "Installing Sublime Text 3"
+brew cask install sublime-text3
+
+echo "Making Projects directory"
+mkdir ~/Projects
