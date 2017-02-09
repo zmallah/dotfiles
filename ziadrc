@@ -5,13 +5,14 @@
 export PATH=$PATH:~/dotfiles
 
 alias python=python3
-export EDITOR='subl'
+export EDITOR='atom'
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 alias sosa='source sosa'
+alias subl='subl3'
 
 eval $(thefuck --alias)

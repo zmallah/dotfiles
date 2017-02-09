@@ -1,0 +1,4 @@
+#!/bin/sh -l
+#$ -S /bin/sh
+
+sudo service network-manager restart

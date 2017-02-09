@@ -18,7 +18,6 @@ elif [ $1 = 'clone' ]
 then
     cd ~/Projects/
     git clone $2 $3
-    mkdir ~/Projects/$3;
     mkvirtualenv --python=$(which python3) $3;
     sosa $3;
 elif [ $1 = 'rm' ]
