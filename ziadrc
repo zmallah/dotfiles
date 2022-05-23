@@ -1,18 +1,6 @@
 # Rather then alter the .bashrc or .zshrc extensively, alter this file.
 # source ~/dotfiles/source in your rc
-
-
 export PATH=$PATH:~/dotfiles
-
-alias python=python3
-export EDITOR='atom'
-
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
-
-source /usr/bin/virtualenvwrapper.sh
-
-alias sosa='source sosa'
-alias subl='subl3'
-
-eval $(thefuck --alias)
+alias proj='source proj'

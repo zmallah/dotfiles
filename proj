@@ -1,6 +1,4 @@
-#!/bin/sh -l
-#$ -S /bin/sh
-
+#!/bin/zsh
 if [ -z "$1" ]
 then
 	echo "No parameters given"
@@ -12,21 +10,21 @@ then
     mkdir ~/Projects/$2;
     cd ~/Projects/$2;
     git init;
-    mkvirtualenv --python=$(which python3) $2;
-    sosa $2;
+    #mkvirtualenv --python=$(which python3) $2;
+    proj $2;
 elif [ $1 = 'clone' ]
 then
     cd ~/Projects/
     git clone $2 $3
-    mkvirtualenv --python=$(which python3) $3;
-    sosa $3;
+    #mkvirtualenv --python=$(which python3) $3;
+    proj $3;
 elif [ $1 = 'rm' ]
 then
-    deactivate
-    rmvirtualenv $2;
+    #deactivate
+    #rmvirtualenv $2;
     rm -rf ~/Projects/$2;
     cd ~/Projects;
 else
-    workon $1;
+    #workon $1;
     cd ~/Projects/$1;
 fi
